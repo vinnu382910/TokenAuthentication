@@ -36,7 +36,7 @@ app.get('/books/', async (request, response) => {
   if (authHeader !== undefined) {
     jwtToken = authHeader.split(' ')[1]
   }
-  if (authHeader === undefined) {
+  if (jwtToken === undefined) {
     response.status(401)
     response.send('Invalid Acsess Token')
   } else {
